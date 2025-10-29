@@ -22,6 +22,7 @@ The goal is to build a strong foundation for competitive programming, technical 
 
 <a name="about"></a>
 ## 🎯 About
+>🗓️ **Started On:** *October 27, 2025*
 
 This repository covers the implementation and practice of fundamental **data structures** and **algorithms** in Java.  
 Each topic includes:
