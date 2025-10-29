@@ -26,6 +26,15 @@ public class CollectionDemo {
         // linkedListExample();
         // stackExample();
         // vectorExample();
+
+        /* Set Interface Implementations */
+        // hashSetExample();
+        // linkedHashSetExample();
+        // treeSetExample();
+
+        /* Queue/deque Interface Implementations */
+        // arrayDequeExample();
+        priorityQueueExample();
     }
 
     private static void arrayListExample() {
@@ -238,5 +247,186 @@ public class CollectionDemo {
 
         // elementAt
         System.out.println("Element at index 0: " + vector.elementAt(0));
+    }
+
+    public static void hashSetExample() {
+        HashSet<Integer> set = new HashSet<>();
+
+        // add
+        set.add(null);
+        set.add(10);
+        set.add(20);
+        set.add(30);
+        System.out.println("After adding elements: " + set);
+        // duplicate add
+        set.add(20);
+        System.out.println("After adding duplicate element 20: " + set);
+
+        // remove
+        set.remove(20);
+        System.out.println("After removing 20: " + set);
+
+        // contains
+        System.out.println("Set contains 10: " + set.contains(10));
+        System.out.println("Set contains 20: " + set.contains(20));
+
+        // size
+        System.out.println("Size of set: " + set.size());
+
+        // isEmpty
+        System.out.println("Is set empty? " + set.isEmpty());
+
+        // clear
+        set.clear();
+        System.out.println("After clearing the set: " + set);
+    }
+
+    public static void LinkedHashSetExample() {
+        LinkedHashSet<String> linkedSet = new LinkedHashSet<>();
+
+        // add
+        linkedSet.add("Apple");
+        linkedSet.add("Banana");
+        linkedSet.add("Cherry");
+        System.out.println("After adding elements: " + linkedSet);
+
+        // remove
+        linkedSet.remove("Banana");
+        System.out.println("After removing 'Banana': " + linkedSet);
+
+        // contains
+        System.out.println("LinkedHashSet contains 'Apple': " + linkedSet.contains("Apple"));
+        System.out.println("LinkedHashSet contains 'Banana': " + linkedSet.contains("Banana"));
+
+        // size
+        System.out.println("Size of LinkedHashSet: " + linkedSet.size());
+
+        // isEmpty
+        System.out.println("Is LinkedHashSet empty? " + linkedSet.isEmpty());
+
+        // clear
+        linkedSet.clear();
+        System.out.println("After clearing the LinkedHashSet: " + linkedSet);
+    }
+
+    public static void treeSetExample() {
+        TreeSet<Integer> treeSet = new TreeSet<>();
+
+        // add
+        treeSet.add(30);
+        treeSet.add(10);
+        treeSet.add(20);
+        System.out.println("After adding elements: " + treeSet);
+
+        // remove
+        treeSet.remove(20);
+        System.out.println("After removing 20: " + treeSet);
+
+        // contains
+        System.out.println("TreeSet contains 10: " + treeSet.contains(10));
+        System.out.println("TreeSet contains 20: " + treeSet.contains(20));
+
+        // size
+        System.out.println("Size of TreeSet: " + treeSet.size());
+
+        // isEmpty
+        System.out.println("Is TreeSet empty? " + treeSet.isEmpty());
+
+        // clear
+        treeSet.clear();
+        System.out.println("After clearing the TreeSet: " + treeSet);
+
+        // tailSet and headSet
+        treeSet.add(10);
+        treeSet.add(20);
+        treeSet.add(30);
+        System.out.println("TreeSet: " + treeSet);
+        System.out.println("HeadSet (elements < 20): " + treeSet.headSet(20));
+        System.out.println("TailSet (elements >= 20): " + treeSet.tailSet(20));
+        // rangeSet using tailSet
+        System.out.println("SubSet (elements from 10 to 30): " + treeSet.subSet(10, 30));
+
+        // reverse order
+        System.out.println("TreeSet in reverse order: " + treeSet.descendingSet());
+    }
+
+    public static void arrayDequeExample() {
+        ArrayDeque<String> deque = new ArrayDeque<>();
+
+        // addFirst and offerFirst
+        deque.addFirst("Apple");
+        deque.offerFirst("Banana");
+        System.out.println("After adding elements at the front: " + deque);
+
+        // add, offer, addLast and offerLast
+        deque.add("Cherry");
+        deque.offer("Date");
+        deque.addLast("Elderberry");
+        deque.offerLast("Fig");
+        System.out.println("After adding elements at the end: " + deque);
+
+        // peek, peekFirst and peekLast
+        System.out.println("First element (peek): " + deque.peek());
+        System.out.println("First element (peekFirst): " + deque.peekFirst());
+        System.out.println("Last element (peekLast): " + deque.peekLast());
+
+        // remove and removeFirst
+        deque.remove();
+        System.out.println("After removing first element: " + deque);
+        deque.removeFirst();
+        System.out.println("After removing first element again: " + deque);
+
+        // removeLast and remove(Object o)
+        deque.removeLast();
+        System.out.println("After removing last element: " + deque);
+        deque.remove("Fig");
+        System.out.println("After removing 'Fig': " + deque);
+
+        // poll and pollFirst and pollLast
+        System.out.println("Polled first element: " + deque.poll());
+        System.out.println("After polling first element: " + deque);
+        System.out.println("Polled first element (pollFirst): " + deque.pollFirst());
+        System.out.println("After polling first element (pollFirst): " + deque);
+        System.out.println("Polled last element (pollLast): " + deque.pollLast());
+        System.out.println("After polling last element (pollLast): " + deque);
+
+        // size
+        System.out.println("Size of deque: " + deque.size());
+
+        // isEmpty
+        System.out.println("Is deque empty? " + deque.isEmpty());
+
+        // clear
+        deque.clear();
+        System.out.println("After clearing the deque: " + deque);
+    }
+
+    public static void priorityQueueExample() {
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+
+        // add & offer
+        priorityQueue.offer(12);
+        priorityQueue.add(13);
+        priorityQueue.add(16);
+        priorityQueue.add(15);
+        priorityQueue.add(14);
+        System.out.println("After adding elements: " + priorityQueue);
+
+        // peek
+        System.out.println("Head element (peek): " + priorityQueue.peek());
+
+        // poll
+        System.out.println("Polled element: " + priorityQueue.poll());
+        System.out.println("After polling an element: " + priorityQueue);
+
+        // size
+        System.out.println("Size of priority queue: " + priorityQueue.size());
+
+        // isEmpty
+        System.out.println("Is priority queue empty? " + priorityQueue.isEmpty());
+
+        // clear
+        priorityQueue.clear();
+        System.out.println("After clearing the priority queue: " + priorityQueue);
     }
 }

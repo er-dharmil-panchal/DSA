@@ -42,6 +42,110 @@
 
 ---
 
+## 🧺 Set Implementations
+
+### 🔹 HashSet
+- Implements `Set` interface using **Hash Table**
+- **Does not maintain order**
+- **No duplicates**, allows **one null**
+- **Not synchronized**
+- Average **Time Complexity:**
+  - Add → O(1)
+  - Remove → O(1)
+  - Contains → O(1)
+- **Best for:** Fast lookup, ensuring uniqueness
+- **Methods:** `add`, `remove`, `contains`, `isEmpty`, `size`, `clear`, `iterator`
+
+---
+
+### 🔹 LinkedHashSet
+- Extends `HashSet`, uses **Linked List + Hash Table**
+- **Maintains insertion order**
+- **No duplicates**, allows **one null**
+- **Not synchronized**
+- Average **Time Complexity:**
+  - Add → O(1)
+  - Remove → O(1)
+  - Contains → O(1)
+- **Best for:** Unique + ordered elements
+- **Methods:** `add`, `remove`, `contains`, `iterator`, `size`, `clear`, `equals`
+
+---
+
+### 🔹 TreeSet
+- Implements `NavigableSet` (extends `SortedSet`)
+- Based on **Red-Black Tree (balanced BST)**
+- **Maintains sorted order**
+- **No duplicates**, **does not allow null**
+- **Not synchronized**
+- **Time Complexity:**
+  - Add → O(log n)
+  - Remove → O(log n)
+  - Contains → O(log n)
+- **Best for:** Sorted unique data
+- **Methods:** `add`, `remove`, `contains`, `first`, `last`, `headSet`, `tailSet`, `subSet`, `iterator`
+
+---
+
+## 🧺 Queue / Deque Implementations
+
+### 🔹 ArrayDeque
+- Implements both **Queue** and **Deque**
+- Based on **Resizable Circular Array**
+- **No null elements**, allows duplicates
+- **Maintains insertion order**
+- **Not synchronized**
+- **Time Complexity:**
+  - Add / Offer → O(1)
+  - Remove / Poll → O(1)
+  - Peek → O(1)
+- **Best for:** Stack & Queue operations (faster than LinkedList)
+- **Methods:** `offer`, `poll`, `peek`, `addFirst`, `addLast`, `removeFirst`, `removeLast`, `peekFirst`, `peekLast`
+
+---
+
+### 🔹 LinkedList (as Queue / Deque)
+- Implements **List**, **Queue**, and **Deque**
+- Based on **Doubly Linked List**
+- **Maintains insertion order**, allows duplicates & nulls
+- **Not synchronized**
+- **Time Complexity:**
+  - Add / Remove (ends) → O(1)
+  - Contains → O(n)
+  - Peek / Get (ends) → O(1)
+- **Best for:** Frequent insertions/removals at both ends
+- **Methods:** `offer`, `poll`, `peek`, `addFirst`, `addLast`, `removeFirst`, `removeLast`
+
+---
+
+### 🔹 PriorityQueue
+- Implements **Queue** interface
+- Based on **Binary Heap (Min-Heap by default)**
+- **Orders by priority**, not insertion
+- **No nulls**, allows duplicates
+- **Not synchronized**
+- **Time Complexity:**
+  - Add / Offer → O(log n)
+  - Remove / Poll → O(log n)
+  - Peek → O(1)
+  - Contains → O(n)
+- **Best for:** Problems needing smallest/largest elements (heaps)
+- **Methods:** `offer`, `poll`, `peek`, `remove`, `clear`, `contains`
+
+---
+
+🧠 **Summary**
+| Category | Implementation | Structure | Order | Null | Duplicates | Add | Remove | Contains | Peek | Best For |
+|------------|----------------|------------|--------|------|-------------|------|----------|-----------|--------|------------|
+| Set | HashSet | Hash Table | ❌ No | ✅ 1 | ❌ | O(1) | O(1) | O(1) | – | Unique fast lookup |
+| Set | LinkedHashSet | Hash Table + Linked List | ✅ Insertion | ✅ 1 | ❌ | O(1) | O(1) | O(1) | – | Unique + ordered |
+| Set | TreeSet | Red-Black Tree | ✅ Sorted | ❌ | ❌ | O(log n) | O(log n) | O(log n) | – | Sorted unique |
+| Queue | ArrayDeque | Resizable Array | ✅ Insertion | ❌ | ✅ | O(1) | O(1) | O(n) | O(1) | Stack + Queue |
+| Queue | LinkedList | Doubly Linked List | ✅ Insertion | ✅ | ✅ | O(1) | O(1) | O(n) | O(1) | Both-end ops |
+| Queue | PriorityQueue | Binary Heap | ❌ Priority | ❌ | ✅ | O(log n) | O(log n) | O(n) | O(1) | Min/Max elements |
+
+---
+
 # 🧠 Java Collections Framework – Summary Table
 *(Reference Summary inspired by **Take U Forward DSA Sheet**)*  
 
