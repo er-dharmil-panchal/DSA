@@ -16,7 +16,7 @@ import java.util.*;
 public class Insertion {
     public static void main(String[] args) {
          Scanner sc = new Scanner(System.in);
-        System.out.println("Bubble Sorting Algorithms Implementation");
+        System.out.println("Insertion Sorting Algorithms Implementation");
         System.out.println("Enter the length of the array ");
         int n = sc.nextInt();
         int arr[] = new int[n];
