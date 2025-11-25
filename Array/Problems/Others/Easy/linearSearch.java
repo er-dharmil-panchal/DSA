@@ -1,4 +1,4 @@
-package Array.Problems.Easy;
+package Array.Problems.Others.Easy;
 
 
 // find first occurense of given number in a array

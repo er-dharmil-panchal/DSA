@@ -1,4 +1,4 @@
-package Array.Problems.leetcode;
+package Array.Problems.leetcode.Easy;
 
 /*
  * 
