@@ -1,4 +1,4 @@
-package Array.Problems.Others.mid;
+package Array.Problems.Others.Medium;
 
 import java.util.*;
 
