@@ -18,30 +18,29 @@ import java.util.*;
      Output: 2
  */
 
-
- /*
- * Moore's Voting Algorithm
- * ------------------------
- * Goal: Find the element that appears more than n/2 times (majority element).
- *
- * Step 1: Find a candidate
- *   - Keep a counter.
- *   - If counter = 0, choose current element as candidate.
- *   - If element == candidate → counter++
- *     else → counter--
- *
- * Step 2: Verify the candidate
- *   - Count how many times candidate appears.
- *   - If count > n/2 → return candidate
- *     else → no majority element
- *
- * Time: O(n)
- * Space: O(1)
- */
+/*
+* Moore's Voting Algorithm
+* ------------------------
+* Goal: Find the element that appears more than n/2 times (majority element).
+*
+* Step 1: Find a candidate
+*   - Keep a counter.
+*   - If counter = 0, choose current element as candidate.
+*   - If element == candidate → counter++
+*     else → counter--
+*
+* Step 2: Verify the candidate
+*   - Count how many times candidate appears.
+*   - If count > n/2 → return candidate
+*     else → no majority element
+*
+* Time: O(n)
+* Space: O(1)
+*/
 
 public class majorityElement {
      public static void main(String[] args) {
-          int arr[] = new int[] { 2, 2, 1, 1, 1, 2, 2 };
+          int arr[] = new int[] { 2, 2, 1, 1, 3, 2, 2, 2, 3 };
 
           System.out.println(brute(arr));
           System.out.println(better(arr));
@@ -49,7 +48,6 @@ public class majorityElement {
           // leetcode
           System.out.println(leetcode(arr));
      }
-
 
      /*
       * 
@@ -74,8 +72,6 @@ public class majorityElement {
           return -1;
      }
 
-
-     
      /*
       * 
       * TC - O(2N) = O(N)
@@ -96,7 +92,6 @@ public class majorityElement {
           return -1;
      }
 
-
      // Moore's Voting Algo
      /*
       *
@@ -105,20 +100,20 @@ public class majorityElement {
       * SC - O(1)
       * 
       */
-     public static int leetcode(int arr[]){
+     public static int leetcode(int arr[]) {
           int count = 0;
           int element = -1;
 
-          for(int i = 0; i < arr.length; i++){
-               if(count == 0){
+          for (int i = 0; i < arr.length; i++) {
+               if (count == 0) {
                     element = arr[i];
                     count++;
                }
-               count += (arr[i] == element)? 1: -1;
+               count += (arr[i] == element) ? 1 : -1;
           }
           count = 0;
-          for(int i = 0; i < arr.length; i++){
-               if(arr[i] == element){
+          for (int i = 0; i < arr.length; i++) {
+               if (arr[i] == element) {
                     count++;
                }
           }
