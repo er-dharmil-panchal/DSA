@@ -79,6 +79,10 @@ public class _3Sum {
           return set;
      }
 
+     /*
+          TC - O(N^2)
+          SC - O(K)
+      */
      public static List<List<Integer>> optimal(int arr[]) {
           Arrays.sort(arr);
           List<List<Integer>> list = new ArrayList<>();
