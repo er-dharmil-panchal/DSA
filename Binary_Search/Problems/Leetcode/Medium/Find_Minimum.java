@@ -26,10 +26,11 @@ public class Find_Minimum {
 
           System.out.println(solution1(arr));
 
-          // better and easy
+          // better and easy 
           System.out.println(solution2(arr));
      }
 
+     //  Dont do this try better one first, this is long and not so good
      /*
       * TC - O(LogN)
       */
