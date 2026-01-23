@@ -36,7 +36,7 @@ public class SQRT {
           return ans;
      }
 
-     // wayyyyy better ! do this.
+     // better ! do this.
      /*
       * TC - O(LogN)
       */
