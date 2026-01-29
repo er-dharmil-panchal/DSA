@@ -42,7 +42,9 @@ public class koko_banana {
                int mid = (low + high) / 2;
                int count = 0;
                for (int i = 0; i < arr.length; i++) {
-                    count += (int) Math.ceil(((double) arr[i]) / mid);
+                    // count += (int) Math.ceil(((double) arr[i]) / mid);
+                    count += (arr[i] + mid - 1) / mid;
+                    if (count > h) break;
                }
                if (count > h) {
                     low = mid + 1;
