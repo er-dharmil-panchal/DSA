@@ -24,7 +24,8 @@ public class Find_Peek_Element {
           System.out.println(solution(arr));
      }
 
-
+     // try to focus only one side, because we have to give only one ans not all possible ans 
+     // if i find only in right side, if there is no such number where it's neighbours are greater. the last of the right element must be the ans according to the given algo..
      public static int solution(int arr[]){
           int low = 0;
           int high = arr.length - 1;

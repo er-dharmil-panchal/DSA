@@ -53,9 +53,10 @@ public class Find_the_Smallest_Divisor_Given_a_threshold {
                int mid = (low + high) / 2;
                int sum = 0;
 
+               // 🔥 Key point
                for (int i : arr) {
                     sum += ((i + mid - 1) / mid);
-               }
+               } 
 
                if (sum > thr) {
                     low = mid + 1;

@@ -17,7 +17,7 @@ package Binary_Search.Problems.Leetcode.Medium;
 public class Single_Element {
      public static void main(String[] args) {
           // int arr[] = new int[]{1,1,2,2,3,3,4,8,8};
-          int arr[] = new int[] { 3, 3, 4, 4, 8 };
+          int arr[] = new int[] { 3, 3, 4, 4, 8};
 
           // real solution
           System.out.println(solution(arr));
@@ -32,6 +32,7 @@ public class Single_Element {
           while(low < high){
                int mid = (low+high)/2;
 
+               // every time go to the even/zero index 
                if(mid % 2 == 1){
                     mid--;
                }
