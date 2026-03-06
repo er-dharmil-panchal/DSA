@@ -67,6 +67,9 @@ public class Capacity_To_Ship_Packages_Within_D_Days {
                          totalDay++;
                     }
                }
+               if (sum != 0 ){
+                    totalDay++;
+               }
 
                if (totalDay <= days) {
                     if (totalDay == days) {
