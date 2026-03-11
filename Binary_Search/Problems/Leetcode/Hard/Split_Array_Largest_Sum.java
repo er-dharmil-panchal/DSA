@@ -8,7 +8,6 @@ import java.util.Arrays;
  * 
  */
 
-
 // Given an integer array nums and an integer k,
 // split nums into k non-empty subarrays such that the largest sum of any subarray is minimized.
 // Return the minimized largest sum of the split.
@@ -20,7 +19,6 @@ import java.util.Arrays;
 // Explanation: There are four ways to split nums into two subarrays.
 // The best way is to split it into [7,2,5] and [10,8], where the largest sum among the two subarrays is only 18.
 
-
 // Example 2:
 // Input: nums = [1,2,3,4,5], k = 2
 // Output: 9
@@ -29,7 +27,7 @@ import java.util.Arrays;
 
 public class Split_Array_Largest_Sum {
      public static void main(String[] args) {
-          int arr[] = new int[]{7,2,5,10,8};
+          int arr[] = new int[] { 7, 2, 5, 10, 8 };
           int k = 3;
 
           System.out.println(solution(arr, k));
@@ -40,10 +38,14 @@ public class Split_Array_Largest_Sum {
           // if there is same number of k as the elements in the array, then the maximum number will be ans
           // if there is just k = 1, then the ans is sum of all elements.
           // so our range is [max -> sum]
+          int low = 0;
+          int high = 0;
 
-          int high = Arrays.stream(arr).sum();
-          int low = Arrays.stream(arr).max().getAsInt();
-          int ans = -1;
+          // instead of inbuild function , use manual for better runtime 
+          for (int num : arr) {
+               low = Math.max(low, num); // Max element is the minimum possible 'largest sum'
+               high += num;              // Total sum is the maximum possible 'largest sum'
+          }
           if (k > arr.length) return -1;
 
           while(low <= high){
@@ -51,24 +53,26 @@ public class Split_Array_Largest_Sum {
 
                if(canPlace(arr, mid, k)){
                     high = mid - 1;
-                    ans = mid;
                } else{
                     low = mid + 1;
                }
           }
-          return ans;
+          // instead of creating int ans, return low for better TC :)
+          return low;
      }
 
-     public static boolean canPlace(int arr[], int mid, int k){
+     public static boolean canPlace(int arr[], int mid, int k) {
           int count = 1;
           int sum = 0;
-          for(int i : arr){
-               if(sum + i <= mid){
+          for (int i : arr) {
+               if (sum + i <= mid) {
                     sum += i;
-               } else{
+               } else {
                     count++;
                     sum = i;
                }
+               // optimezed to beat 100% in runtime 
+               if (count > k) return false;
           }
           return count <= k;
      }
