@@ -77,7 +77,8 @@ public class Aggressive_cows {
       */
      public static int optimal(int arr[], int cows) {
           Arrays.sort(arr);
-          int high = arr[arr.length - 1];
+          // int high = arr[arr.length - 1];
+          int high = arr[arr.length - 1] - arr[0];
           int low = arr[0];
           int ans = -1;
 

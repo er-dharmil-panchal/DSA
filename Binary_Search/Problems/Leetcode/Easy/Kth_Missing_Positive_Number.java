@@ -73,6 +73,10 @@ public class Kth_Missing_Positive_Number {
           return (target + high + 1);
      }
 
+
+
+
+     // NOT GOOD , JUST TRY TO FIND DIFFERENT WAY...
      public static int solutio1n(int arr[], int target) {
           int low = 1;
           int high = Arrays.stream(arr).max().getAsInt();
